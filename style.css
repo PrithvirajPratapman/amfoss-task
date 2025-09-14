@@ -1,0 +1,110 @@
+:root {
+    --bg-color: #f0f0f0;
+    --text-color: #333;
+    --canvas-bg: #ffffff;
+    --canvas-border: #ccc;
+    --accent-color: #007bff;
+    --dot-color: #ff3b30;
+    --feedback-bg: rgba(0, 0, 0, 0.7);
+    --feedback-color: #fff;
+}
+
+body.dark-mode {
+    --bg-color: #1a1a1a;
+    --text-color: #f0f0f0;
+    --canvas-bg: #2c2c2c;
+    --canvas-border: #555;
+    --accent-color: #00aaff;
+    --dot-color: #ff453a;
+    --feedback-bg: rgba(255, 255, 255, 0.8);
+    --feedback-color: #000;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ui-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+button, select {
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: 1px solid var(--canvas-border);
+    background-color: var(--canvas-bg);
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+button:hover, select:hover {
+    background-color: var(--bg-color);
+}
+
+#theme-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.canvas-container {
+    position: relative;
+}
+
+canvas {
+    background-color: var(--canvas-bg);
+    border: 2px solid var(--canvas-border);
+    border-radius: 12px;
+    cursor: crosshair;
+    touch-action: none; /* Prevents scrolling on touch devices */
+}
+
+.feedback {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--feedback-bg);
+    color: var(--feedback-color);
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.feedback.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.score-board {
+    font-size: 1.2rem;
+}
+
+#current-score, #best-score {
+    font-weight: bold;
+    color: var(--accent-color);
+}

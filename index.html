@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF--8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draw a Perfect Circle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Draw a Perfect Circle</h1>
+        <div class="ui-controls">
+            <div class="control-group">
+                <label for="difficulty">Mode:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="hardcore">Hardcore</option>
+                </select>
+            </div>
+            <button id="reset-button">Try Again</button>
+            <button id="theme-toggle">🌙</button>
+        </div>
+
+        <div class="canvas-container">
+            <canvas id="drawing-canvas" width="500" height="500"></canvas>
+            <div id="score-feedback" class="feedback"></div>
+        </div>
+        
+        <div class="score-board">
+            <p>Score: <span id="current-score">--</span></p>
+            <p>Best: <span id="best-score">--</span></p>
+        </div>
+    </main>
+
+    <audio id="drawing-sound" src="https://www.soundjay.com/mechanical/sounds/pencil-drawing-1.mp3" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
